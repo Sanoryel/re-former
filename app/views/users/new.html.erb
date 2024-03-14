@@ -26,14 +26,14 @@
 -->
 
 <%= form_with model: @user do |form| %>
-  <%= form.label :username %>
-  <%= form.text_field :username %>
+  <%= form.label :username, "Username:" %>
+  <%= form.text_field :username, placeholder: 'username', value: 'user' %>
   <br><br>
-  <%= form.label :email%>
-  <%= form.email_field :email %>
+  <%= form.label :email, "Email:" %>
+  <%= form.email_field :email, placeholder: 'email@email.com', value: 'user@email.fr'  %>
   <br><br>
-  <%= form.label :password %>
-  <%= form.password_field :password %>
+  <%= form.label :password, "Password:" %>
+  <%= form.password_field :password, placeholder: 'pwd', value: '          '  %>
   <br><br>
   <%= form.submit %>
 <% end %>
