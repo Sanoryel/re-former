@@ -1,7 +1,24 @@
 class UsersController < ApplicationController
   def new
-    @user = User.new()
+    @user = User.new
   end
+
+  def edit
+    @user = User.find(params[:id])
+    p"hello"
+    p @user.errors
+
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update(user_params)
+      redirect_to @user, notice: 'User was successfully updated.'
+    else
+      render :edit, status: :unprocessable_entity
+    end
+  end
+
 
   def create
     # @user = User.new(username: params[:username], email: params[:email], password: params[:password])
